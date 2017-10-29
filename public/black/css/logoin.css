@@ -1,0 +1,19 @@
+body{
+   background-color: #223333;
+}
+.lt_panel{
+margin-top: 200px;
+}
+.panel-primary{
+    background-color: #337ab7;
+}
+.lt_panel h4{
+    text-align: center;
+    color: #fff;
+}
+.lt_reset{
+    margin-right: 50px;
+}
+.lt_logoin{
+color: #fff;
+}
