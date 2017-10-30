@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="bli/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="bli/bootstrap-validator/css/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="css/comment.css">
+    <link rel="stylesheet" href="css/user.css">
+</head>
+
+<body>
+    <!-- 左侧栏 -->
+    <div class="lt_sidebar">
+        <!-- logo -->
+        <div class="logo">
+            <a href="#">ZTNCP</a>
+        </div>
+        <!-- 管理员头像 -->
+        <div class="username">
+            <a href="#">
+                <img src="images/default.png" alt="">
+            </a>
+            <p>超帅管理员</p>
+        </div>
+        <!-- 菜单导航栏 -->
+        <div class="menu_categroy">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-user"></span> 用户管理</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-list"></span> 分类管理</a>
+                    <!-- 二级菜单 -->
+                    <div class="small_categroy" style="display:none">
+                        <a href="#">一级分类</a>
+                        <a href="#">二级分类</a>
+                    </div>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-tags"></span> 商品管理</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 右侧内容 -->
+    <div class="top_nav">
+        <a href="#" class="top_menu">
+            <span class="glyphicon glyphicon-align-justify"></span>
+        </a>
+        <a href="#" class="top_logout">
+            <span class="glyphicon glyphicon-log-out"></span>
+        </a>
+    </div>
+    <div class="container">
+        <div class="bread">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="#">管理系统</a>
+                </li>
+                <li class="active">用户管理</li>
+            </ol>
+        </div>
+
+
+        <!-- 内容部分 -->
+        <div class="content">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th style="width:10%">序号</th>
+                        <th style="width:30%">用户名</th>
+                        <th style="width:30%">手机号</th>
+                        <th style="width:10%">状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <!-- 挖个坑 -->
+                  
+                </tbody>
+            </table>
+        </div>
+      <div class="text-right">
+          <ul id="paginator"></ul>
+      </div>
+
+
+        <div class="modal fade" tabindex="-1" id="logoutModal">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">温习提示</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-danger">
+                            <span class="glyphicon glyphicon-info-sign"></span>您确定要退出后台管理系统吗？</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn_logout btn btn-primary">退出</button>
+                    </div>
+                </div>
+    
+            </div>
+
+        </div>
+        
+
+
+
+
+        <script src="bli/jquery/jquery.min.js"></script>
+        <script src="bli/bootstrap/js/bootstrap.js"></script>
+        <script src="bli/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+        <script src="bli/bootstrap-paginator/bootstrap-paginator.js"></script>
+        <script src="bli/echarts/echarts.min.js"></script>
+        <script src="bli/artTemplate/template-web.js"></script>
+        <script src="js/common.js"></script>
+        <script src="js/user.js"></script>
+
+    <script type="text/html" id="tpl">
+    {{each rows v i}}
+    <tr>
+            <td>{{(page-1)*size+i+1}}</td>
+            <td>{{v.username}}</td>
+            <td>{{v.mobile}}</td>
+            <td>{{v.isDelete===1?"正常":"禁用"}}</td>
+            <td>
+                 {{if v.isDelete===1}}
+                    <button class="btn btn-sm btn-danger">禁用</button>
+                    {{/if}}
+                    {{if v.isDelete === 0}}
+                    <button class="btn btn-sm btn-danger">启用</button>
+                    {{/if}}
+            </td>
+    </tr>
+    {{/each}}
+    
+    </script>
+</body>
+
+</html>

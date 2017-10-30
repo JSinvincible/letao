@@ -4,35 +4,105 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>乐淘</title>   
+    <title>Document</title>
     <link rel="stylesheet" href="bli/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="bli/bootstrap-validator/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="css/comment.css">
-    <!-- <link rel="stylesheet" href="css/comment.css"> -->
 </head>
+
 <body>
-<div class="aside_left">
-    <div class="logo"><a href="#">ITCAST</a></div>
-    <div class="user">
-            <img src="images/default.png" alt="">
+    <!-- 左侧栏 -->
+    <div class="lt_sidebar">
+        <!-- logo -->
+        <div class="logo">
+            <a href="#">ZTNCP</a>
+        </div>
+        <!-- 管理员头像 -->
+        <div class="username">
+            <a href="#">
+                <img src="images/default.png" alt="">
+            </a>
             <p>超帅管理员</p>
+        </div>
+        <!-- 菜单导航栏 -->
+        <div class="menu_categroy">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-user"></span> 用户管理</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-list"></span> 分类管理</a>
+                    <!-- 二级菜单 -->
+                    <div class="small_categroy" style="display:none">
+                        <a href="#">一级分类</a>
+                        <a href="#">二级分类</a>
+                    </div>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-tags"></span> 商品管理</a>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div class="nav">
-    <ul>
-        <li><span class="glyphicon glyphicon-user"></span><a href="javascript:;">用户管理</a></li>
-        <li><span class="glyphicon glyphicon-list"></span><a href="#">分类管理</a></li>
-        <li><span class="glyphicon glyphicon-tags"></span><a href="#">商品管理</a></li>
-    </ul>
-</div>
-</div>
-<div class="content"></div>
+    <!-- 右侧内容 -->
+    <div class="top_nav">
+        <a href="#" class="top_menu">
+            <span class="glyphicon glyphicon-align-justify"></span>
+        </a>
+        <a href="#" class="top_logout">
+            <span class="glyphicon glyphicon-log-out"></span>
+        </a>
+    </div>
+    <div class="container">
+        <div class="bread">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="#">管理系统</a>
+                </li>
+                <li class="active">首页</li>
+            </ol>
+        </div>
 
-</div>
 
+        <div class="content">
+                <div class="bar_left col-md-5 col-md-offset-1"></div>
+                <div class="bar_right col-md-5 col-md-offset-1"></div>
+            </div>
+
+
+    </div>
+
+    <div class="modal fade" tabindex="-1" id="logoutModal">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">温习提示</h4>
+                </div>
+                <div class="modal-body">
+                  <p class="text-danger"><span class="glyphicon glyphicon-info-sign"></span>您确定要退出后台管理系统吗？</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                  <button type="button" class="btn_logout btn btn-primary">退出</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+
+
+
+
+    <script src="bli/jquery/jquery.min.js"></script>
+    <script src="bli/bootstrap/js/bootstrap.js"></script>
+    <script src="bli/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+    <script src="bli/echarts/echarts.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/common.js"></script>
 </body>
-<script src="bli/jquery/jquery.min.js"></script>
-<script src="bli/bootstrap/js/bootstrap.js"></script>
-<script src="bli/bootstrap-validator/js/bootstrapValidator.min.js"></script>
-<script src="js/index.js"></script>
 
 </html>
